@@ -5,14 +5,12 @@ body {
 .red {
     background: #c71226;
     height: 100px;
-    /*Challenge:
-    Add 100px of margin on the bottom of the red box. */
-    
 }
 
 .blue {
     background: #0d1b88;
     height: 100px;
+    margin: 10px 0;
 }
 
 .green {

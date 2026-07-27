@@ -4,12 +4,12 @@
 
 /* Challenge - part 2: 
 Replace the element selectors with class selectors */
-img {
+.google-pic {
     display: block;
     width: 300px;
 }
 
-input {
+.text-box {
     display: block;
     width: 400px;
 }
