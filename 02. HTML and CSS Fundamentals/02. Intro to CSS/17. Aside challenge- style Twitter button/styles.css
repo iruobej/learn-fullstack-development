@@ -8,3 +8,11 @@ border color: #cfd9de
 text color: #0f1419
 Remember the font-weight!
 */
+button {
+    background-color: #fff;
+    border: 2px solid #cfd9de;
+    color: #0f1419;
+    border-radius: 100px;
+    padding: 5px 10px;
+    font-weight: 800;
+}

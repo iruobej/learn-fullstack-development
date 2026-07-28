@@ -29,3 +29,10 @@ Challenge:
 Center the button and add some space above it
 */
 
+.btn {
+    display: block;
+    width: 150px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
