@@ -13,3 +13,7 @@ Challenge:
 3. Add 20 pixels of padding on all sides of the card
 */
 
+.card {
+    border: 2px dotted blue;
+    padding: 20px;
+}

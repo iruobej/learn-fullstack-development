@@ -8,6 +8,10 @@ body {
 
 article {
     text-align: center;
+    azimuth: 70deg;
+    color: brown;
+    border-collapse: collapse;
+    cursor: crosshair;
 }
 
 /*
