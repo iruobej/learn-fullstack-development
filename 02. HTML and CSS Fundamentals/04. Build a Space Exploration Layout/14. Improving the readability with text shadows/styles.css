@@ -35,3 +35,6 @@ the blur to 4px and the color to black.
     border-bottom: 4px solid white;
 }
    
+#title {
+    text-shadow: 0 0 4px black ;
+}

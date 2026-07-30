@@ -14,7 +14,7 @@
     start, center, end
     */
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     
 }

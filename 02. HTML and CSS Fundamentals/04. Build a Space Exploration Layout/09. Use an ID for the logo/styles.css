@@ -1,6 +1,6 @@
 body {
-    color: white;
-    background-image: url("images/universe.jpg");
+    color: #9e9cb7;
+    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3kwN3RiZXBwcTE1d3E4d3o1NnEzMnl1d285NjFzaHhkajd6OW56dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3og0IFrHkIglEOg8Ba/giphy.gif");
     background-size: cover;
     text-align: center;
     font-family: 'Orbitron', sans-serif;
@@ -17,8 +17,14 @@ width to a suitable level.
     background: white;
     border: none;
     font-family: 'Orbitron', sans-serif;
+    color: inherit;
+    font-weight: 800;
 }
 
 .underline {
     border-bottom: 4px solid white;
+}
+
+#logo {
+    width: 20%;
 }
