@@ -22,12 +22,19 @@ Make the bday elements look like the
 provided design slide.
 */
 
-#bday-age {
+#bday-age, #bday-date {
     background: #EFB0C9;
+    border-radius: 5px;
+}
+
+#bday-age {
+    padding: 12px;
+    margin-bottom: 1px;
+    margin-top: 5px;
 }
 
 #bday-date {
-    background: #EFB0C9;
+    padding: 7px 9px;
 }
 
 #header {

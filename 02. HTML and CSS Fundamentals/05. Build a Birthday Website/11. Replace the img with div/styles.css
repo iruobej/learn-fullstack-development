@@ -49,9 +49,13 @@ h1, h2, h3, h4, p {
 }
 
 .gift-img {
+    height: 400px;
     width: 400px;
     border: 6px solid white;
     border-radius: 10px;
+    background-image: url("./images/gift-cover.jpg");
+    background-size: cover;
+    margin: 0 auto;
 }
 
 /*

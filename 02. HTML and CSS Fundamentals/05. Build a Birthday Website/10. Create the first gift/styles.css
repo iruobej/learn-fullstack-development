@@ -46,4 +46,11 @@ Challenge:
 
 PS: the image should be 400px wide.
 */
-
+.gift-section {
+    margin-top: 60px;
+}
+.gift-img{
+    width: 400px;
+    border: 5px solid white;
+    border-radius: 5px;
+}
