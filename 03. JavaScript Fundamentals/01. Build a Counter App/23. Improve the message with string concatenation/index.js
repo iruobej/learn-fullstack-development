@@ -9,5 +9,6 @@ welcomeEl.innerText = greeting + name
 // WRITE YOUR CODE BELOW HERE
 // HINT: count = count + 1
 
+let emoji = " 👋"
 
-
+welcomeEl.innerText += emoji;
