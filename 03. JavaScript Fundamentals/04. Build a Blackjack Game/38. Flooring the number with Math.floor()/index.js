@@ -10,5 +10,5 @@ console.log(flooredNumber)
 What does Math.floor() do to positive numbers?
 
 Your answer: 
-
+Rounds them down to the whole number below
 */
