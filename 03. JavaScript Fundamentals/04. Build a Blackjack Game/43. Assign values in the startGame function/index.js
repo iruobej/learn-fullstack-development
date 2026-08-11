@@ -8,7 +8,7 @@ let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 function getRandomCard() {
-    let randomNumer = Math.floor( Math.random()*13 ) + 1
+    let randomNumer = Math.floor( Math.random() * 13 ) + 1
     if (randomNumer > 10) {
         return 10
     } else if (randomNumer === 1) {
@@ -17,11 +17,16 @@ function getRandomCard() {
         return randomNumer
     }
 }
-
+console.log(cards)
 function startGame() {
     isAlive = true
     // Generate two random numbes
     // Re-assign the cards and sum variables so that the game can start
+    let firstCard = Math.floor(Math.random() * 13) + 1
+    let secondCard = Math.floor(Math.random() * 13) + 1
+    sum = firstCard + secondCard
+    cards.push(firstCard, secondCard)
+    console.log(cards)
     renderGame()
 }
 

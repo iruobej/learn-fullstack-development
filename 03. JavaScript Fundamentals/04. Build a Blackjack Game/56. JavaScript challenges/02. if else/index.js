@@ -1,4 +1,4 @@
-let age = 15
+let age = 10
 
 // less than 6 years old -> free
 // 6 to 17 years old     -> child discount
@@ -9,3 +9,17 @@ let age = 15
 // Create a conditional statement (if/else/else if) that logs out the discount
 // the passenger will get based upon the value of the age variable
 
+let discount = ""
+if (age < 6) {
+    discount = "free"
+} else if (age < 18) {
+    discount = "child discount"
+} else if (age < 27) {
+    discount = "student discount"
+} else if (age <= 66) {
+    discount = "full price"
+} else {
+    discount = "senior citizen discount"
+}
+
+console.log(discount)
