@@ -3,6 +3,9 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 // 2. Grab the unordered list and store it in a const variable called ulEl
 
+let ulEl = document.getElementById("ul-el")
+console.log(ulEl)
+
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     console.log(myLeads)

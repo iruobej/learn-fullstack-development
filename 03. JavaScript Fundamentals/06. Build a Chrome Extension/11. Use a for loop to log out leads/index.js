@@ -10,5 +10,7 @@ inputBtn.addEventListener("click", function() {
 
 // Log out the items in the myLeads array using a for loop 
 
-
+for (let lead of myLeads) {
+    console.log(lead);
+}
 
