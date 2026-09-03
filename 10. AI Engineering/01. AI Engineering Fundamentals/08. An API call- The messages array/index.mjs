@@ -25,16 +25,16 @@ const openai = new OpenAI({
 const messages = [
     {
         role: 'system',
-        content: 'You are a helpful general knowledge expert.'
+        content: 'You are a poem generator. Generate each new sentence of the poem on a new line. The poem should be 5 sentences long, with each sentence having words that rhyme inside it.'
     },
     {
         role: 'user',
-        content: 'Who invented the television?'
+        content: 'I need a poem about televisions'
     }
 ]
 
 const response = await openai.chat.completions.create({
-    model: 'gpt-4',
+    model: 'gpt-4o-mini',
     messages: messages
 })
 
