@@ -8,3 +8,14 @@ const imgs = [
     "images/hip3.jpg"
 ]
 
+const imgContainer = document.getElementById("container")
+
+function renderImgs(arr) {
+    let listItems = ""
+    for (let img of arr) {
+        listItems += `<img class="team-img" src=${img}>`
+    }
+    imgContainer.innerHTML = listItems
+}
+
+renderImgs(imgs)

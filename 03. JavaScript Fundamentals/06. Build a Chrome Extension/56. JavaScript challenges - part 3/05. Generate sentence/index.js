@@ -9,5 +9,13 @@
 
 // Use both a for loop and a template string to solve the challenge
 function generateSentence(desc, arr) {
-    
+    let str = ""
+    for (let i=0; i < arr.length - 1; i++) {
+        str += arr[i] + ", "
+    }
+    str += arr[arr.length-1]
+    return ` The ${arr.length} ${desc} are ${str}`
 }
+
+const sen = generateSentence("best clubs", ["Chelsea", "Barcelona", "Real Madrid"])
+console.log(sen)

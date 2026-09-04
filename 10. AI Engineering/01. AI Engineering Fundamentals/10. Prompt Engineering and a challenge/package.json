@@ -1,6 +1,6 @@
 {
-  "name": "Scrim-s05pocl",
-  "description": "https://scrimba.com/fullstack-path-c0fullstack/~0ywg/s01f7qi2ek/head",
+  "name": "Scrim-s05p9lq",
+  "description": "https://scrimba.com/fullstack-path-c0fullstack/~04e6/s0p3nmr6ks/head",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -8,8 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "openai": "4.14.2",
+    "openai": "^7.10.0",
     "vite": "latest"
-  },
-  "devDependencies": {}
+  }
 }

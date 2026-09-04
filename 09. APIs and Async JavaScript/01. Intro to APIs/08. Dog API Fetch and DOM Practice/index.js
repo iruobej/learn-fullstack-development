@@ -10,3 +10,11 @@ you create the image completely here in the JS and add
 it as the innerHTML of another element on the DOM)
 */
 
+fetch('https://dog.ceo/api/breeds/image/random')
+.then(response => response.json())
+.then(data => {
+    const imgEl = document.createElement("img")
+    imgEl.src = data.message
+    document.getElementById("img-el").appendChild(imgEl)
+
+})
