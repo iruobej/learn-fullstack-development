@@ -9,11 +9,13 @@ const server = http.createServer( (req, res)=> {
 
 /*
 Challenge:
-Check the ‘url’ property on the req object. 
-Only serve our string if it’s ‘/api’.
+Check the method property on the req object.
+Only serve our string if it's GET
 */
-
-  res.end('This is from the server')
+  if (req.url === '/api' && req.method === 'GET') {
+    res.end('This is from the server')
+  }
+  
 
 })
 
