@@ -17,6 +17,9 @@ Challenge:
       {error: "not found", message: "The requested route does not exist"}
   Think: what do we need to send along with the data?
 */
+  res.setHeader('Content-Type', 'application/json')
+  res.statusCode = 404
+  res.end(JSON.stringify({error: "not found", message: "The requested route does not exist"}))
   }
 })
 

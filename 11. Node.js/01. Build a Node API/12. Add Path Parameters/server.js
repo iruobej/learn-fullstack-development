@@ -7,10 +7,18 @@ const server = http.createServer(async (req, res) => {
   const destinations = await getDataFromDB()
 
   if (req.url === '/api' && req.method === 'GET') {
+
     res.setHeader('Content-Type', 'application/json')
     res.statusCode = 200
     res.end(JSON.stringify(destinations))
-  } else if (x) {
+
+  } else if (req.url.startsWith('/api/continent') && req.method === 'GET') {
+
+    let continentIndex = req.url.lastIndexOf('/') + 1
+    let continent = req.url.slice(continentIndex)
+    res.setHeader('Content-Type', 'application/json')
+    res.statusCode = 200
+    res.end(JSON.stringify(destinations.filter(x => x.continent.toLowerCase() === continent.toLowerCase())))
   /*
   Challenge:
   1. Check if the url starts with “/api/continent”.
@@ -21,13 +29,15 @@ const server = http.createServer(async (req, res) => {
     (What method can you use to filter data?)
   */
     } else {
-    res.setHeader('Content-Type', 'application/json')
-    res.statusCode = 404
-    res.end(JSON.stringify({
-      error: "not found",
-      message: "The requested route does not exist"
-    })
-    )
+
+      res.setHeader('Content-Type', 'application/json')
+      res.statusCode = 404
+      res.end(JSON.stringify({
+          error: "not found",
+          message: "The requested route does not exist"
+        })
+      )
+
   }
 })
 

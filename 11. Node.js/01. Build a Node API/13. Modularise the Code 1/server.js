@@ -1,5 +1,6 @@
 import http from 'node:http'
 import { getDataFromDB } from './database/db.js'
+import setResponse from './utils/setResponse.js'
 
 const PORT = 8000
 
@@ -11,32 +12,24 @@ Challenge:
 
 const server = http.createServer(async (req, res) => {
   const destinations = await getDataFromDB()
+  //gives the http object res a setResponse method, and assigns my custom setResponse method to it
+  res.setResponse = setResponse 
 
   if (req.url === '/api' && req.method === 'GET') {
-
-    res.setHeader('Content-Type', 'application/json')
-    res.statusCode = 200
-    res.end(JSON.stringify(destinations))
+    res.setResponse(200, destinations)
 
   } else if (req.url.startsWith('/api/continent') && req.method === 'GET') {
 
-    const continent = req.url.split('/').pop()
+    const continent = decodeURIComponent(req.url.split('/').pop())
     const filteredData = destinations.filter((destination) => {
       return destination.continent.toLowerCase() === continent.toLowerCase()
     })
-    res.setHeader('Content-Type', 'application/json')
-    res.statusCode = 200
-    res.end(JSON.stringify(filteredData))
-
+    res.setResponse(200, filteredData)
   } else {
-
-    res.setHeader('Content-Type', 'application/json')
-    res.statusCode = 404
-    res.end(JSON.stringify({
+    res.setResponse(404, {
       error: "not found",
       message: "The requested route does not exist"
     })
-    )
   }
   
 })
