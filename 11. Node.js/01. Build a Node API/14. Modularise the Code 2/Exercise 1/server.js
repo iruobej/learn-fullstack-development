@@ -1,6 +1,7 @@
 import http from 'node:http'
 import { getDataFromDB } from './database/db.js'
 import { sendJSONResponse } from './utils/sendJSONResponse.js'
+import getFilteredData from './utils/getFilteredData.js'
 
 const PORT = 8000
 
@@ -10,6 +11,9 @@ const server = http.createServer(async (req, res) => {
 /*
 Challenge:
   1. Add an 'api/country/<country>' route.
+  Then:
+  1. Create a util function to filter data
+  2. Wire it up and delete unneeded code
 */
 
 
@@ -20,9 +24,13 @@ Challenge:
   } else if (req.url.startsWith('/api/continent') && req.method === 'GET') {
 
     const continent = req.url.split('/').pop()
-    const filteredData = destinations.filter((destination) => {
-      return destination.continent.toLowerCase() === continent.toLowerCase()
-    })
+    const filteredData = getFilteredData(destinations, 'continent', continent)
+    sendJSONResponse(res, 200, filteredData)
+
+  } else if (req.url.startsWith('/api/country') && req.method === 'GET') {
+
+    const country = req.url.split('/').pop()
+    const filteredData = getFilteredData(destinations, 'country', country)
     sendJSONResponse(res, 200, filteredData)
 
   } else {
