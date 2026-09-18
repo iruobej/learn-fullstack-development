@@ -14,17 +14,20 @@ const server = http.createServer(async (req, res) => {
      hint.md for help!
 */
 
-  const urlObj = // Use the URL constructor and pass in the relative and base urls.
+  const urlObj = new URL (req.url, `http://${req.headers.host}`)// Use the URL constructor and pass in the relative and base urls.
 
-  const queryObj = // Use the fromEntries() method on the Object class .
+  const queryObj = Object.fromEntries(urlObj.searchParams)// Use the fromEntries() method on the Object class .
                    // What do you need to pass in? 
 
-  console.log(queryObj)
+  
+  //console.log(urlObj)
 
+  
+  if (urlObj.pathname === '/api' && req.method === 'GET') {
+    let filteredDestinations = destinations 
+    console.log(queryObj)
 
-  if (req.url === '/api' && req.method === 'GET') {
-
-    sendJSONResponse(res, 200, destinations)
+    sendJSONResponse(res, 200, filteredDestinations)
 
   } else if (req.url.startsWith('/api/continent') && req.method === 'GET') {
 

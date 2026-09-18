@@ -16,7 +16,12 @@ const server = http.createServer(async (req, res) => {
   if (urlObj.pathname === '/api' && req.method === 'GET') {
     
     let filteredData = destinations
-  
+    if (urlObj.search.length > 0 ) {
+      
+      for (const [key, value] of Object.entries(queryObj)) {
+        filteredData = getDataByQueryParams(filteredData, key, value)
+      }
+    }
 /*
 Challenge:
 
