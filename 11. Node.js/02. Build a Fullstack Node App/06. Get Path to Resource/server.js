@@ -8,9 +8,7 @@ Challenge 1:
 
 1. Get the name of the directory holding this server.js file and store it to a const ‘__dirname’.
 */
-
 const __dirname = import.meta.dirname
-
 
 const server = http.createServer((req, res) => {
 
